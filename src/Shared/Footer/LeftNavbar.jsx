@@ -1,6 +1,8 @@
 import { key } from 'localforage';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import EditorsInside from '../../pages/News/EditorsInside/EditorsInside';
+import EditorInsideNavbar from './EditorInsideNavbar';
 
 const LeftNavbar = () => {
     const [categoris, setCategoris] = useState([])
@@ -16,8 +18,9 @@ const LeftNavbar = () => {
             <div>
 
                 {
-                    categoris.map(categori =><Link to={`categori/${categori.id}`} className='d-flex text-decoration-none text-black my-3' key={categori.id}>{categori.name}</Link>)
+                    categoris.map(categori =><Link to={`../category/${categori.id}`} className='d-flex text-decoration-none text-black my-3' key={categori.id}>{categori.name}</Link>)
                 }
+            <EditorInsideNavbar></EditorInsideNavbar>
             </div>
         </div>
     );
