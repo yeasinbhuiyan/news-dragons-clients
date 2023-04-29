@@ -1,7 +1,6 @@
 import moment from 'moment';
 import React from 'react';
 import { Image } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { FaEye, FaRegBookmark, FaRegStar, FaShareAlt, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';

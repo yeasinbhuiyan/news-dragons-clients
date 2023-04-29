@@ -10,6 +10,8 @@ import News from "../pages/News/News";
 import LoginLayout from "../Layout/LoginLayout";
 import Login from "../Shared/Footer/Login&Registation/Login";
 import Register from "../Shared/Footer/Login&Registation/Register";
+import Terms from "../Shared/Terms";
+import PrivateRoute from "../Providers/PrivateRoute";
 
 
 
@@ -31,6 +33,9 @@ const router = createBrowserRouter([
                 path: 'register',
                 element: <Register></Register>
 
+            },{
+                path : '/terms',
+                element: <Terms></Terms>
             }
         ]
     },
@@ -51,7 +56,7 @@ const router = createBrowserRouter([
     },
     {
         path: 'news',
-        element: <NewsLayout></NewsLayout>,
+        element: <PrivateRoute><NewsLayout></NewsLayout></PrivateRoute>,
         children: [
             {
                 path: ':id',
