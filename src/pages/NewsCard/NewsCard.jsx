@@ -3,11 +3,19 @@ import React from 'react';
 import { Image } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import { FaEye, FaRegBookmark, FaRegStar, FaShareAlt, FaStar } from 'react-icons/fa';
-import Rating from 'react-rating';
+// import Rating from 'react-rating';
+
+
+import { Rating } from '@smastrom/react-rating'
+
+import '@smastrom/react-rating/style.css'
 import { Link } from 'react-router-dom';
+import useTitle from '../../Hook/useTitle';
 
 const NewsCard = ({ news }) => {
     const { _id, title, details, image_url, author, rating, total_view } = news
+    
+    useTitle('Category')
     return (
         <Card className=" mb-4">
             <Card.Header className='d-flex align-items-center'>
@@ -37,8 +45,8 @@ const NewsCard = ({ news }) => {
             </Card.Body>
             <Card.Footer className="text-muted d-flex align-items-center">
 
-                <div className='flex-grow-1'>
-                    <Rating  placeholderRating={rating.number}
+                <div className='flex-grow-1 d-flex'>
+                    {/* <Rating  placeholderRating={rating.number}
                         readonly
                         emptySymbol={<FaRegStar></FaRegStar>}
                         placeholderSymbol={<FaStar className='text-warning'></FaStar>}
@@ -46,11 +54,18 @@ const NewsCard = ({ news }) => {
                  
                         
                        
-                    </Rating>
-                    <span>{rating.number}</span>
+                    </Rating> */}
+                        <Rating
+                            style={{ maxWidth: 100 }}
+                            value={Math.round(rating?.number || 0)}
+                            readOnly />
+
+                            
+                        <span className='ms-'>{rating?.number}</span>
+                    </div>
 
 
-                </div>
+           
                 <div>
                     <FaEye></FaEye> <span className='me-1'>{total_view}</span>
 

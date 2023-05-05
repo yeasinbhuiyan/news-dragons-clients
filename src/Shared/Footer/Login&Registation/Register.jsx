@@ -2,11 +2,15 @@ import React, { useContext, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import useTitle from "../../../Hook/useTitle";
 
 const Register = () => {
   const [checkBox , setCheckBox] = useState(false)
   const {createAccount}= useContext(AuthContext)
 
+
+
+  useTitle('Register')
   const location = useLocation()
   const navigate = useNavigate()
   console.log(location)

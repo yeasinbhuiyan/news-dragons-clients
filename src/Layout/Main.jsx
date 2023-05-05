@@ -6,10 +6,12 @@ import { Col, Container, Row } from 'react-bootstrap';
 import LeftNavbar from '../Shared/Footer/LeftNavbar';
 import RightNavbar from '../Shared/Footer/RightNavbar';
 import NavigationVar from '../Shared/Footer/NavigationVar/NavigationVar';
+import useTitle from '../Hook/useTitle';
 
 
 
 const Main = () => {
+    // useTitle('Home')
     return (
         <div>
             <Header></Header>

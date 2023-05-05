@@ -2,11 +2,15 @@ import React, { useContext } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import useTitle from "../../../Hook/useTitle";
 
 const Login = () => {
   const {logIn} = useContext(AuthContext)
   const navigate = useNavigate()
   const location = useLocation()
+
+
+  useTitle('Login')
  
   const handleLogin =(event)=>{
     event.preventDefault()
